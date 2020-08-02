@@ -1,11 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App3'
+import App from './PropsLearn'
 
 ReactDOM.render(
- 
-  <App />
- ,
+
+  <
+  App / > ,
   document.getElementById('root')
 );
-
