@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './ChildToParent'
+import App from './Stateupdate'
 
 ReactDOM.render(
 
