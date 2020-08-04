@@ -12,6 +12,9 @@ export default class Lift extends Component {
     console.log('1.1 constructor 初始化组件')
   }
   // 第二阶段，更新期
+  NSAFE_componentWillReceiveProps(){
+    console.log('2.1 componentWillReceiveProps 接收props属性之前')
+  }
   handleClick() {
     alert('点击按钮')
   }
