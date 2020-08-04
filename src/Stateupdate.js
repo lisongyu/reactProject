@@ -12,11 +12,27 @@ export default class Lift extends Component {
     console.log('1.1 constructor 初始化组件')
   }
   // 第二阶段，更新期
-  NSAFE_componentWillReceiveProps(){
+  UNSAFE_componentWillReceiveProps() {
     console.log('2.1 componentWillReceiveProps 接收props属性之前')
   }
+  shouldComponentUpdate(nextProps, nextState) {
+    console.log('2.2 shouldComponentUpdate')
+    console.log('num的旧值为', this.state.num);
+    console.log('num的新值为', nextState)
+    return (this.state.num !== nextState.num)
+  }
+  //WARNING! To be deprecated in React v17. Use componentDidUpdate instead.
+  componentWillUpdate(nextProps, nextState) {
+    console.log('2.3 componentWillUpdate 更新之前执行的')
+  }
+  componentDidUpdate(prevProps, prevState) {
+    console.log('2.5 componentDidUpdate')
+  }
   handleClick() {
-    alert('点击按钮')
+
+    this.setState({
+      num: 21
+    })
   }
   //WARNING! To be deprecated in React v17. Use componentDidMount instead.
   UNSAFE_componentWillMount() {
