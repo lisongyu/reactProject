@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <ul>
+    <li><a href="#/index">首页</a></li>
+    <li><a href="#/list">列表</a></li>
+  </ul>
+  <div id="routerView"></div>
+  <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+  <script>
+    // 定义一个路由(多个路线)
+    let routes={
+      // url 和视图的对应关系
+      "#/index":'./index.html',
+      "#/list":'./list.html'
+
+    }
+    // 给窗口添加事件，当hash值发生变化的时候,#router加载对应的视图
+    window.addEventListener("hashchange",()=>{
+      console.log(location.hash)
+      $('#routerView').load(routes[location.hash])
+    })
+  </script>
+</body>
+</html>

@@ -1,10 +1,10 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './ComponentCor2'
+// import React from 'react';
+// import ReactDOM from 'react-dom';
+import './reactRouter/App'
 
-ReactDOM.render(
+// ReactDOM.render(
 
-  <
-    App />,
-  document.getElementById('root')
-);
+//   <
+//     App />,
+//   document.getElementById('root')
+// );
