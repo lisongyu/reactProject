@@ -7,17 +7,26 @@ import {BrowserRouter as Router,Route, Link} from 'react-router-dom'
 import List from "./List"
 import Index from "./Index"
 import Detail from "./Detail"
+import News from "./News"
 
 // 后台首页
-import AdminIndex from "./AdminIndex"
-import Center from "./Center"
+// import AdminIndex from "./AdminIndex"
+// import Center from "./Center"
 
 class App extends Component {
+  constructor(props) {
+    super(props)
+  
+    this.state = {
+       detailParam:{pathname:"/Detail",search:'?id=1112',hash:'#abc'}
+    }
+  }
+  
     render() {
         return (
             <>
               <h3>所有页面普通内容</h3>
-              <Router basename='/admin'>
+              {/* <Router basename='/admin'>
                  <ul>
                  <li>
                           <Link to="/">后台首页</Link>
@@ -29,18 +38,21 @@ class App extends Component {
                  </ul>
                  <Route path='/'  exact component={AdminIndex}></Route>
                    <Route path='/center'  component={Center}></Route>
-              </Router>
-                <Router basename='/app'>
+              </Router> */}
+                <Router basename='/' history={Router}>
                   <ul>
                       
                       <li>
-                          <Link to="/list">列表页</Link>
+                          <Link to={{pathname:"/list"}}>列表页</Link>
                       </li>
                       <li>
                           <Link to="/">首页</Link>
                       </li>
                       <li>
-                          <Link to="/Detail">详情页</Link>
+                          <Link to={this.state.detailParam} replace>详情页</Link>
+                      </li>
+                      <li>
+                          <Link to="/news/12323" >新闻页</Link>
                       </li>
                   </ul>
 
@@ -49,6 +61,7 @@ class App extends Component {
                   <Route path='/list' component={List}></Route>
                   <Route path='/' exact component={Index}></Route>
                   <Route path='/detail' component={Detail}></Route>
+                  <Route path='/news/:id' component={News}></Route>
                   </Router>
                
                 

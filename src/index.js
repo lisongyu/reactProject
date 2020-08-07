@@ -1,6 +1,6 @@
 import React from "react"
 import ReactDOM from 'react-dom'
-import App from './reactRouter/App'
+import App from './reactRouter/LoginInfo'
 //引入路由依赖，并起一个别名，因为原先的名字太长了
 // import {BrowserRouter as Router} from 'react-router-dom'
 

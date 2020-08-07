@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
 
-export default class Detail extends Component {
+export default class News extends Component {
   constructor(props) {
     super(props)
-    console.log(props)
+    console.log('提交修改彩色')
+    console.log(this.props)
+  
     this.state = {
        
     }
@@ -12,7 +14,7 @@ export default class Detail extends Component {
   render() {
     return (
       <div>
-        <h1>详情页</h1>
+        <h1>我是新闻{this.props.match.params.id}</h1>
       </div>
     )
   }
